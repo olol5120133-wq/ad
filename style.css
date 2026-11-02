@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d6b36a;
+    --gold-light: #f5dfa6;
+    --black: #080808;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Tajawal', sans-serif;
+    background: var(--black);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 50% 35%, #302313 0%, transparent 55%),
+        radial-gradient(circle at 10% 90%, #20170c, transparent 35%),
+        #080808;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+    background-image:
+        linear-gradient(45deg, transparent 49%, #d6b36a 50%, transparent 51%);
+    background-size: 45px 45px;
+    z-index: -1;
+}
+
+header {
+    width: 100%;
+    padding: 25px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 27px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: white;
+}
+
+.menu-label {
+    color: #8d8068;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+main {
+    min-height: 78vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 18px;
+}
+
+.profile {
+    width: 100%;
+    max-width: 460px;
+    padding: 40px 28px;
+    text-align: center;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(214,179,106,.25);
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 70px rgba(0,0,0,.5);
+    animation: appear 1s ease;
+}
+
+.avatar {
+    width: 112px;
+    height: 112px;
+    margin: auto auto 20px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #382b19, #090909);
+    box-shadow: 0 0 30px rgba(214,179,106,.18);
+}
+
+.avatar span {
+    color: var(--gold-light);
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.welcome {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 39px;
+    margin-bottom: 12px;
+}
+
+h1 span {
+    color: var(--gold);
+}
+
+.description {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.line {
+    width: 65px;
+    height: 1px;
+    background: var(--gold);
+    margin: 28px auto;
+    opacity: .6;
+}
+
+h2 {
+    font-size: 22px;
+    color: var(--gold-light);
+}
+
+.subtitle {
+    color: #888;
+    font-size: 12px;
+    margin: 8px 0 22px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 13px;
+    padding: 15px 18px;
+    border: 1px solid rgba(214,179,106,.25);
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    background: rgba(255,255,255,.025);
+    transition: .3s ease;
+    font-size: 15px;
+}
+
+.social span {
+    color: var(--gold);
+    font-size: 23px;
+    font-weight: bold;
+    width: 25px;
+}
+
+.social b {
+    margin-right: auto;
+    color: var(--gold);
+}
+
+.social:hover {
+    background: rgba(214,179,106,.12);
+    border-color: var(--gold);
+    transform: translateY(-4px);
+}
+
+.tech-icon {
+    color: var(--gold);
+    font-size: 35px;
+}
+
+.tech p {
+    color: #888;
+    font-size: 12px;
+    margin-top: 9px;
+    direction: ltr;
+}
+
+footer {
+    text-align: center;
+    color: #665a46;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 20px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px;
+    }
+
+    .profile {
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}
